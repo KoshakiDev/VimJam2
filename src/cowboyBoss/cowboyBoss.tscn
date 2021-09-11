@@ -5,8 +5,9 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle"
-length = 0.4
+length = 0.6
 loop = true
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -14,7 +15,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3 ]
@@ -22,8 +23,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "walk"
-length = 0.5
+length = 0.625
 loop = true
+step = 0.025
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -31,7 +33,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 5, 6, 7, 8, 9 ]
@@ -44,6 +46,7 @@ rotation = -0.000768945
 texture = ExtResource( 1 )
 hframes = 5
 vframes = 2
+frame = 5
 
 [node name="Gun" type="Node2D" parent="."]
 position = Vector2( 5, 8 )
