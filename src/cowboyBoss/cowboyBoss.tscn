@@ -3,7 +3,6 @@
 [ext_resource path="res://assets/cowboyBoss/cowboyBoss-32x32-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://assets/cowboyBoss/cowboyBoss-Gun-20x11.png" type="Texture" id=2]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "idle"
 length = 0.4
@@ -45,7 +44,6 @@ rotation = -0.000768945
 texture = ExtResource( 1 )
 hframes = 5
 vframes = 2
-frame = 7
 
 [node name="Gun" type="Node2D" parent="."]
 position = Vector2( 5, 8 )
