@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Player-Front-Hand.png-f9e59fbf385984457227200926734502.stex"
+path="res://.import/cowboyBoss-Gun-20x11.png-f5bfa36df5e72360eb1e7f0e8f1cf44a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Player-Front-Hand.png"
-dest_files=[ "res://.import/Player-Front-Hand.png-f9e59fbf385984457227200926734502.stex" ]
+source_file="res://assets/cowboyBoss/cowboyBoss-Gun-20x11.png"
+dest_files=[ "res://.import/cowboyBoss-Gun-20x11.png-f5bfa36df5e72360eb1e7f0e8f1cf44a.stex" ]
 
 [params]
 

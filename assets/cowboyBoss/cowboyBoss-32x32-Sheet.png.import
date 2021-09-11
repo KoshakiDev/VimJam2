@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Player-Back-Hand.png-84722caecee0088c05872034d504a69f.stex"
+path="res://.import/cowboyBoss-32x32-Sheet.png-e6fc885257fb0b13ece4577492c50748.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Player-Back-Hand.png"
-dest_files=[ "res://.import/Player-Back-Hand.png-84722caecee0088c05872034d504a69f.stex" ]
+source_file="res://assets/cowboyBoss/cowboyBoss-32x32-Sheet.png"
+dest_files=[ "res://.import/cowboyBoss-32x32-Sheet.png-e6fc885257fb0b13ece4577492c50748.stex" ]
 
 [params]
 

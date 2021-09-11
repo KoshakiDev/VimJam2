@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlayerBoss-32x32-Sheet.png-74625a569d18896d5297ba6172c8cca3.stex"
+path="res://.import/Player-forearm.png-341fa9f0184038ac0d5169899db0b867.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cowboy Boss/PlayerBoss-32x32-Sheet.png"
-dest_files=[ "res://.import/PlayerBoss-32x32-Sheet.png-74625a569d18896d5297ba6172c8cca3.stex" ]
+source_file="res://assets/player/Player-forearm.png"
+dest_files=[ "res://.import/Player-forearm.png-341fa9f0184038ac0d5169899db0b867.stex" ]
 
 [params]
 
