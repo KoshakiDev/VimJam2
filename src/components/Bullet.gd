@@ -1,16 +1,17 @@
-tool
+class_name Bullet
 extends Node2D
 
-export var dir: Vector2 = Vector2.RIGHT
-export var speed: float = 1.0
-export var shooting: bool = false
+# Internal state
+var dir: Vector2 = Vector2.RIGHT
+var speed: float = 1.0
+var shooting: bool = false
 
-#func _ready() -> void:
-#	shooting = true
+func _ready() -> void:
+	shooting = true
 
-func setup(_dir, _speed) -> void:
-	dir = _dir
-	speed = _speed
+func setup(dir, speed) -> void:
+	self.dir = dir
+	self.speed = speed
 
 func _physics_process(delta: float) -> void:
 	if shooting:
