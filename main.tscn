@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Cowboy Boss/cowboyBoss.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 40.4819, -32.5269 )
+
+[node name="Cowboy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 117.733, -16.0867 )
+scale = Vector2( -1, 1 )
