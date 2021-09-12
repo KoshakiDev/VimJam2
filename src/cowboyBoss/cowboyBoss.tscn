@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/cowboyBoss/cowboyBoss-32x32-Sheet.png" type="Texture" id=1]
-[ext_resource path="res://assets/cowboyBoss/cowboyBoss-Gun-20x11.png" type="Texture" id=2]
+[ext_resource path="res://assets/cowboyBoss/CowboyBoss-Gun-20x11.png" type="Texture" id=2]
 [ext_resource path="res://src/cowboyBoss/cowboyBoss.gd" type="Script" id=3]
+[ext_resource path="res://assets/cowboyBoss/CowboyBoss-Shadow.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle"
@@ -54,6 +55,11 @@ tracks/0/keys = {
 
 [node name="Cowboy" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="Shadow" type="Sprite" parent="."]
+position = Vector2( 0, 4 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -12 )

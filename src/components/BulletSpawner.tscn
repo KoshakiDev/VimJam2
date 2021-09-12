@@ -5,3 +5,4 @@
 [node name="BulletSpawner" type="Position2D"]
 position = Vector2( 514.072, 285.076 )
 script = ExtResource( 1 )
+emitter = null
