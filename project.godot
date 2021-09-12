@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/components/bullet_emitters/BulletEmitterSpread.gd"
 }, {
+"base": "Reference",
+"class": "BulletRef",
+"language": "GDScript",
+"path": "res://src/components/bullets/BulletRef.gd"
+}, {
 "base": "Position2D",
 "class": "BulletSpawner",
 "language": "GDScript",
@@ -39,6 +44,7 @@ _global_script_class_icons={
 "BulletEmitter": "",
 "BulletEmitterSingle": "",
 "BulletEmitterSpread": "",
+"BulletRef": "",
 "BulletSpawner": ""
 }
 
@@ -125,10 +131,11 @@ player_shoot={
 [physics]
 
 common/enable_pause_aware_picking=true
+2d/thread_model=2
+2d/cell_size=64
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_clear_color=Color( 0.133333, 0.12549, 0.203922, 1 )

@@ -5,14 +5,14 @@
 [ext_resource path="res://assets/player/player-hand-back.png" type="Texture" id=3]
 [ext_resource path="res://assets/player/player-sheet.png" type="Texture" id=4]
 [ext_resource path="res://src/player/Player.gd" type="Script" id=5]
-[ext_resource path="res://src/components/BulletSpawner.gd" type="Script" id=6]
-[ext_resource path="res://src/components/Bullet.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/components/BulletSpawner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/misc/player-bullet.png" type="Texture" id=7]
 [ext_resource path="res://src/components/bullet_emitters/BulletEmitterSpread.gd" type="Script" id=8]
 [ext_resource path="res://assets/player/player-shadow.png" type="Texture" id=9]
 
-[sub_resource type="Resource" id=1]
+[sub_resource type="Resource" id=6]
 script = ExtResource( 8 )
-amount = 3
+amount = 72
 spread_angle = 5.0
 
 [sub_resource type="CircleShape2D" id=2]
@@ -79,8 +79,7 @@ tracks/0/keys = {
 extents = Vector2( 6.95486, 8.41533 )
 
 [node name="Player" type="KinematicBody2D"]
-collision_layer = 2
-collision_mask = 5
+collision_layer = 0
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_vertical_guides_": [  ]
@@ -131,11 +130,11 @@ rotation = -0.755259
 position = Vector2( 0, 10 )
 texture = ExtResource( 1 )
 
-[node name="BulletSpawner" type="Position2D" parent="Body/ForearmFront/FrontArm"]
-position = Vector2( 0.141039, 21.953 )
-script = ExtResource( 6 )
-bullet_scene = ExtResource( 7 )
-emitter = SubResource( 1 )
+[node name="BulletSpawner" parent="Body/ForearmFront/FrontArm" instance=ExtResource( 6 )]
+position = Vector2( 0, 22 )
+bullet_texture = ExtResource( 7 )
+shot_delay = 0.1
+emitter = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="Body/ForearmFront"]
 position = Vector2( -1.90735e-06, 6.5 )
@@ -144,6 +143,9 @@ texture = ExtResource( 2 )
 [node name="Hitbox" type="Area2D" parent="Body" groups=[
 "hitbox",
 ]]
+monitoring = false
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Hitbox"]
 visible = false

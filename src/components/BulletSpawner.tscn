@@ -6,3 +6,10 @@
 position = Vector2( 514.072, 285.076 )
 script = ExtResource( 1 )
 emitter = null
+
+[node name="BulletArea" type="Area2D" parent="."]
+monitorable = false
+collision_layer = 4
+
+[connection signal="area_shape_entered" from="BulletArea" to="." method="_on_BulletArea_area_shape_entered"]
+[connection signal="body_shape_entered" from="BulletArea" to="." method="_on_BulletArea_body_shape_entered"]

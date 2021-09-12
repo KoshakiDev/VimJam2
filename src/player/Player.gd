@@ -11,6 +11,9 @@ onready var body := $Body
 onready var bullet_spawner: BulletSpawner = $Body/ForearmFront/FrontArm/BulletSpawner
 onready var front_arm := $Body/ForearmFront/FrontArm
 
+func _ready():
+	bullet_spawner.setup()
+
 func _physics_process(delta):
 	
 	var move_dir := get_input_dir()
