@@ -1,0 +1,179 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://src/intro/intro.gd" type="Script" id=1]
+[ext_resource path="res://assets/intro/gardner.png" type="Texture" id=2]
+[ext_resource path="res://assets/intro/ApercuPro-BoldItalic.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://src/intro/GodotMan.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/intro/xanthosWare.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=3]
+resource_name = "progIntro"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ProgCredit:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 1.6, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "soundIntro"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("SoundCredit:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 1.6, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "xanthosIntro"
+length = 3.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("ArtCredit/Title:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ArtCredit/Credit:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3, 0.7, 1.6, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ArtCredit/Title:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.9, 2.2, 3, 3.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ArtCredit:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.3, 0.7, 3, 3.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 3 )
+
+[node name="Intro" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ 0.1138 ]
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/progIntro = SubResource( 3 )
+anims/soundIntro = SubResource( 4 )
+anims/xanthosIntro = SubResource( 1 )
+
+[node name="ArtCredit" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+
+[node name="Credit" type="Label" parent="ArtCredit"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 296.0
+margin_top = 392.0
+margin_right = 722.0
+margin_bottom = 504.0
+custom_fonts/font = SubResource( 2 )
+text = "Art
+Team Organization"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gardner" type="Sprite" parent="ArtCredit"]
+position = Vector2( 512, 208 )
+texture = ExtResource( 2 )
+
+[node name="Title" type="Sprite" parent="ArtCredit"]
+visible = false
+modulate = Color( 1, 1, 1, 0.333333 )
+position = Vector2( 512, 440 )
+texture = ExtResource( 5 )
+
+[node name="ProgCredit" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+
+[node name="Credit" type="Label" parent="ProgCredit"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 323.031
+margin_top = 390.28
+margin_right = 677.031
+margin_bottom = 543.28
+custom_fonts/font = SubResource( 2 )
+text = "Programmed by
+Master Mori
+Edeazul"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GodotMan" parent="ProgCredit" instance=ExtResource( 4 )]
+position = Vector2( 512, 325 )
+scale = Vector2( 5, 5 )
+
+[node name="SoundCredit" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+
+[node name="Credit" type="Label" parent="SoundCredit"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 322.275
+margin_top = 390.468
+margin_right = 678.275
+margin_bottom = 543.468
+custom_fonts/font = SubResource( 2 )
+text = "Sound/Music by
+dragnmastr85"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
