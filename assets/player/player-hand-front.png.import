@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CowboyBoss-Shadow.png-b78014cf5b0568b65f031d351cd2d1fd.stex"
+path="res://.import/player-hand-front.png-1a8138498b1428c8e47a852cbf1614a0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cowboyBoss/CowboyBoss-Shadow.png"
-dest_files=[ "res://.import/CowboyBoss-Shadow.png-b78014cf5b0568b65f031d351cd2d1fd.stex" ]
+source_file="res://assets/player/player-hand-front.png"
+dest_files=[ "res://.import/player-hand-front.png-1a8138498b1428c8e47a852cbf1614a0.stex" ]
 
 [params]
 
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
