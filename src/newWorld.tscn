@@ -16,6 +16,7 @@ tile_data = PoolIntArray( -589841, 0, 0, -589840, 0, 1, -589839, 0, 1, -589838, 
 
 [node name="Cowboy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 101.594, 0 )
+scale = Vector2( -1, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 bullet_scene = ExtResource( 3 )
