@@ -46,6 +46,10 @@ _global_script_class_icons={
 
 config/name="VimJam2"
 run/main_scene="res://src/newWorld.tscn"
+boot_splash/image="res://splashscreen.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0.2, 0.172549, 0.313726, 1 )
 config/icon="res://icon.png"
 
 [global]
