@@ -1,3 +1,4 @@
+tool
 class_name BulletSpawner
 extends Position2D
 
@@ -8,7 +9,18 @@ export var shot_delay: float = .1
 # speed of the emitted bullets
 export var bullet_speed: float = 400
 # the emitter to be used for spawning bullets (controls behaviour)
-export var emitter: Resource
+var emitter: BulletEmitter
+
+# Workaround for resource list
+func _get_property_list() -> Array:
+	var exported_resource_property: Dictionary = {
+		"name":"emitter",
+		"type":TYPE_OBJECT,
+		"hint":PROPERTY_HINT_RESOURCE_TYPE,
+		"hint_string": "BulletEmitter",
+		"usage": PROPERTY_USAGE_DEFAULT | PROPERTY_USAGE_SCRIPT_VARIABLE
+		}
+	return [exported_resource_property]
 
 # offset to the rotation, added to BulletSpawners rotation
 var rotation_offset: float = 0
@@ -18,6 +30,8 @@ var bullet_emitter: BulletEmitter
 onready var timer := Timer.new()
 
 func _ready() -> void:
+	if Engine.editor_hint:
+		return
 	add_child(timer)
 	timer.wait_time = shot_delay
 	timer.one_shot = false
