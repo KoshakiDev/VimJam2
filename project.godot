@@ -8,6 +8,40 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://src/components/Bullet.gd"
+}, {
+"base": "Resource",
+"class": "BulletEmitter",
+"language": "GDScript",
+"path": "res://BulletEmitter.gd"
+}, {
+"base": "BulletEmitter",
+"class": "BulletEmitterSingle",
+"language": "GDScript",
+"path": "res://src/components/bullet_emitters/BulletEmitterSingle.gd"
+}, {
+"base": "BulletEmitter",
+"class": "BulletEmitterSpread",
+"language": "GDScript",
+"path": "res://src/components/bullet_emitters/BulletEmitterSpread.gd"
+}, {
+"base": "Position2D",
+"class": "BulletSpawner",
+"language": "GDScript",
+"path": "res://src/components/BulletSpawner.gd"
+} ]
+_global_script_class_icons={
+"Bullet": "",
+"BulletEmitter": "",
+"BulletEmitterSingle": "",
+"BulletEmitterSpread": "",
+"BulletSpawner": ""
+}
+
 [application]
 
 config/name="VimJam2"
