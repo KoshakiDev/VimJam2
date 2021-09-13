@@ -21,5 +21,5 @@ func _unhandled_input(event):
 	if event.is_action("player_shoot"):
 		get_tree().reload_current_scene()
 
-func sceneMove():
-	get_tree().change_scene("res://src/userInterface/titleScreen/TitleScreen.tscn")
+#func sceneMove():
+#	get_tree().change_scene("res://src/userInterface/titleScreen/TitleScreen.tscn")
