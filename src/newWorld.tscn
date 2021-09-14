@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/cowboyBoss/cowboyBoss.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/components/Bullet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/environment/tileset/caveTileset.tres" type="TileSet" id=4]
+[ext_resource path="res://addons/dialogic/Dialog.tscn" type="PackedScene" id=5]
 
 [node name="World" type="Node2D"]
 
@@ -20,3 +21,12 @@ scale = Vector2( -1, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 bullet_scene = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogNode" parent="CanvasLayer" instance=ExtResource( 5 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -300.0
+margin_bottom = -300.0
+timeline = "timeline-1631593126.json"
