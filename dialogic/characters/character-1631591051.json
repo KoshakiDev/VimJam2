@@ -8,13 +8,17 @@
 	"name": "Godot",
 	"nickname": "",
 	"nickname_bool": false,
-	"offset_x": 0,
-	"offset_y": 0,
+	"offset_x": 200,
+	"offset_y": -50,
 	"portraits": [
 		{
 			"name": "Default",
-			"path": ""
+			"path": "res://assets/ui/dialogue/portraits/Robot/player portrait frown.png"
+		},
+		{
+			"name": "Smile",
+			"path": "res://assets/ui/dialogue/portraits/Robot/player portrait smile.png"
 		}
 	],
-	"scale": 100
+	"scale": 50
 }

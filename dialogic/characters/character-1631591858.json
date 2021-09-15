@@ -8,13 +8,13 @@
 	"name": "Legendary Sheriff",
 	"nickname": "",
 	"nickname_bool": false,
-	"offset_x": 0,
-	"offset_y": 0,
+	"offset_x": -200,
+	"offset_y": -100,
 	"portraits": [
 		{
 			"name": "Default",
-			"path": ""
+			"path": "res://assets/ui/dialogue/portraits/Sheriff/sheriff_portrait.png"
 		}
 	],
-	"scale": 100
+	"scale": 50
 }
