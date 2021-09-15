@@ -1,0 +1,78 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1631632362.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1631632362.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hey, boss. We heard the Legendary Sheriff himself is back in town. "
+		},
+		{
+			"character": "character-1631632362.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Apparentaly, he is coming your way down to the mineshaft."
+		},
+		{
+			"character": "character-1631632362.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "What color would you like your coffin to be? I think blue will suit you well. "
+		},
+		{
+			"character": "character-1631632362.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Actually, the coffin doesn't matter. "
+		},
+		{
+			"character": "character-1631632362.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I think there would even be enough of what is left of you to even fill up a bloody soup can."
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1631632362.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"action": "join",
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "What is even the point anymore?"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1631632072.json",
+		"name": "Intro"
+	}
+}
