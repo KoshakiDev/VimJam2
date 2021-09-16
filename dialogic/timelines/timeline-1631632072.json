@@ -2,6 +2,32 @@
 	"events": [
 		{
 			"action": "join",
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "*Ring ring! Ring ring! Someone is calling you*"
+		},
+		{
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "*sigh* Who is this?"
+		},
+		{
+			"action": "join",
 			"character": "character-1631632362.json",
 			"event_id": "dialogic_002",
 			"mirror": false,
@@ -50,24 +76,68 @@
 			"event_id": "dialogic_003"
 		},
 		{
-			"action": "join",
 			"character": "character-1631591051.json",
-			"event_id": "dialogic_002",
-			"mirror": false,
+			"event_id": "dialogic_001",
 			"portrait": "",
-			"position": {
-				"0": true,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": false
-			}
+			"text": "What is even the point anymore?"
 		},
 		{
 			"character": "character-1631591051.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "What is even the point anymore?"
+			"text": "I can't remember the last time ANYONE has fought me."
+		},
+		{
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "No one wants to fight me. And not for any good reason at all."
+		},
+		{
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "People say I am boring."
+		},
+		{
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "My moves slow. My bullets suck. My body is so large, it is impossible to NOT hit me."
+		},
+		{
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I lost too much \"power of existence\". Sooner or later, I would fade out of existence. "
+		},
+		{
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I am ON THE EDGE of death. "
+		},
+		{
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "On the bright side, if I somehow defeat the sheriff, I would gain some \"power of existence\" and not die."
+		},
+		{
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "On the other side, I would die. Most likely I would die."
+		},
+		{
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_001",
+			"portrait": "Smile",
+			"text": "I guess I will never know if I don't try"
+		},
+		{
+			"change_timeline": "timeline-1631681278.json",
+			"event_id": "dialogic_020"
 		}
 	],
 	"metadata": {

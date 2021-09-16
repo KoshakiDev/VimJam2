@@ -17,9 +17,10 @@ func _ready():
 	yield(anim_play, "animation_finished")
 	anim_play.play("soundIntro")
 
-func _unhandled_input(event):
-	if event.is_action("player_shoot"):
-		get_tree().reload_current_scene()
+func _input(event):
+	if event is InputEventKey:
+		if event.pressed:
+			sceneMove()
 
-#func sceneMove():
-#	get_tree().change_scene("res://src/userInterface/titleScreen/TitleScreen.tscn")
+func sceneMove():
+	get_tree().change_scene("res://src/main_menu/menu.tscn")

@@ -35,10 +35,6 @@
 			}
 		},
 		{
-			"event_id": "dialogic_023",
-			"wait_seconds": 2
-		},
-		{
 			"character": "character-1631591858.json",
 			"event_id": "dialogic_001",
 			"portrait": "",

@@ -1,0 +1,132 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I...I..."
+		},
+		{
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_001",
+			"portrait": "Smile",
+			"text": "I can't believe it! "
+		},
+		{
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_001",
+			"portrait": "Smile",
+			"text": "I won! I will live!"
+		},
+		{
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "I need to see that unknown caller. I need to teach him a lesson. "
+		},
+		{
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_001",
+			"portrait": "Smile",
+			"text": "Because no one will ever mess with the Great Godot!"
+		},
+		{
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_001",
+			"portrait": "Smile",
+			"text": "I would like to thank YOU for playing the game! It was a lot of fun making it."
+		},
+		{
+			"action": "join",
+			"character": "character-1631591858.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1631591858.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hopefully you enjoyed the game."
+		},
+		{
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Hey, didn't you die?"
+		},
+		{
+			"character": "character-1631591858.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Legends never die."
+		},
+		{
+			"character": "character-1631591858.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "They only respawn."
+		},
+		{
+			"character": "character-1631591858.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Anyway."
+		},
+		{
+			"character": "character-1631591858.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Make sure to check out each creator."
+		},
+		{
+			"character": "character-1631591858.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I would like to personally thank Coppola Emilio for providing this awesome dialog addon! Really cool!"
+		},
+		{
+			"character": "character-1631591858.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Goodbye!"
+		},
+		{
+			"character": "character-1631591051.json",
+			"event_id": "dialogic_001",
+			"portrait": "Smile",
+			"text": "See ya!"
+		},
+		{
+			"action": "leaveall",
+			"character": "[All]",
+			"event_id": "dialogic_003"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1631781499.json",
+		"name": "Outro"
+	}
+}

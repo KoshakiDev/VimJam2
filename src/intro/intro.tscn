@@ -2,10 +2,11 @@
 
 [ext_resource path="res://src/intro/intro.gd" type="Script" id=1]
 [ext_resource path="res://assets/intro/gardner.png" type="Texture" id=2]
-[ext_resource path="res://assets/intro/ApercuPro-BoldItalic.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/misc/apercu.tres" type="DynamicFont" id=3]
 [ext_resource path="res://src/intro/GodotMan.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/intro/xanthosWare.png" type="Texture" id=5]
 [ext_resource path="res://assets/intro/adam_credit.png" type="Texture" id=6]
+[ext_resource path="res://src/main_menu/menu.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "progIntro"
@@ -37,6 +38,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "sceneMove"
+} ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -90,15 +105,12 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=4]
-size = 48
-font_data = ExtResource( 3 )
-
 [node name="Intro" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_vertical_guides_": [ 0.1138 ]
 }
+transition_scene = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/progIntro = SubResource( 1 )
@@ -117,7 +129,7 @@ margin_left = 296.0
 margin_top = 392.0
 margin_right = 722.0
 margin_bottom = 504.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 text = "Art
 Team Organization"
 align = 1
@@ -145,7 +157,7 @@ margin_left = 323.031
 margin_top = 390.28
 margin_right = 677.031
 margin_bottom = 543.28
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 text = "Programmed by
 Master Mori
 Edeazul"
@@ -174,7 +186,7 @@ margin_left = 322.275
 margin_top = 390.468
 margin_right = 678.275
 margin_bottom = 543.468
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 text = "Sound/Music by
 dragnmastr85"
 align = 1
