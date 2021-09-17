@@ -1,6 +1,10 @@
 {
 	"events": [
 		{
+			"emit_signal": "",
+			"event_id": "dialogic_040"
+		},
+		{
 			"action": "join",
 			"character": "character-1631591051.json",
 			"event_id": "dialogic_002",

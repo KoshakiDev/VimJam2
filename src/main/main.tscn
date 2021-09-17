@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/ui/sheriff_healthbar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/cowboyBoss/cowboyBoss.tscn" type="PackedScene" id=2]
@@ -7,8 +7,25 @@
 [ext_resource path="res://addons/dialogic/Dialog.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/player/player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/environment/tileset/caveTileset.tres" type="TileSet" id=7]
+[ext_resource path="res://src/main/main.gd" type="Script" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "transition"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="World" type="Node2D"]
+script = ExtResource( 8 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 7 )
@@ -36,3 +53,9 @@ timeline = "timeline-1631632072.json"
 [node name="Control2" parent="CanvasLayer" instance=ExtResource( 1 )]
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource( 3 )]
+
+[node name="TransitionPlay" type="AnimationPlayer" parent="."]
+anims/transition = SubResource( 1 )
+
+[connection signal="freeze_player" from="." to="." method="freeze_player"]
+[connection signal="unfreeze_player" from="." to="." method="unfreeze_player"]

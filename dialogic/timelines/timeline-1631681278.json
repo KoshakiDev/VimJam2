@@ -51,6 +51,10 @@
 			"event_id": "dialogic_001",
 			"portrait": "Smile",
 			"text": "I see this as an opportunity to live again."
+		},
+		{
+			"emit_signal": "unfreeze_player",
+			"event_id": "dialogic_040"
 		}
 	],
 	"metadata": {
