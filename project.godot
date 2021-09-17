@@ -33,13 +33,19 @@ _global_script_classes=[ {
 "class": "BulletSpawner",
 "language": "GDScript",
 "path": "res://src/components/BulletSpawner.gd"
+}, {
+"base": "Node2D",
+"class": "Gun",
+"language": "GDScript",
+"path": "res://src/cowboyBoss/Gun.gd"
 } ]
 _global_script_class_icons={
 "Bullet": "",
 "BulletEmitter": "",
 "BulletEmitterSingle": "",
 "BulletEmitterSpread": "",
-"BulletSpawner": ""
+"BulletSpawner": "",
+"Gun": ""
 }
 
 [application]
@@ -120,15 +126,18 @@ player_shoot={
 
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
-2d_physics/layer_3="bullet"
+2d_physics/layer_3="player_bullet"
+2d_physics/layer_4="enemy"
+2d_physics/layer_5="enemy_bullet"
 
 [physics]
 
 common/enable_pause_aware_picking=true
+2d/thread_model=2
+2d/cell_size=64
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_clear_color=Color( 0.133333, 0.12549, 0.203922, 1 )

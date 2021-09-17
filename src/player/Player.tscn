@@ -10,15 +10,15 @@
 [ext_resource path="res://src/components/bullet_emitters/BulletEmitterSpread.gd" type="Script" id=8]
 [ext_resource path="res://assets/player/player-shadow.png" type="Texture" id=9]
 
-[sub_resource type="Resource" id=1]
+[sub_resource type="Resource" id=5]
 script = ExtResource( 8 )
 amount = 3
 spread_angle = 5.0
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 radius = 40.6174
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 loop = true
 step = 0.05
 tracks/0/type = "value"
@@ -58,7 +58,7 @@ tracks/2/keys = {
 "values": [ Vector2( 21, 0 ), Vector2( 21, 0 ), Vector2( 21, -1 ), Vector2( 21, -1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 length = 0.2
 loop = true
 step = 0.05
@@ -75,12 +75,14 @@ tracks/0/keys = {
 "values": [ 4, 5 ]
 }
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 6.95486, 8.41533 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"character",
+"target",
+]]
 collision_layer = 2
-collision_mask = 5
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_vertical_guides_": [  ]
@@ -135,7 +137,7 @@ texture = ExtResource( 1 )
 position = Vector2( 0.141039, 21.953 )
 script = ExtResource( 6 )
 bullet_scene = ExtResource( 7 )
-emitter = SubResource( 1 )
+bullet_emitter = SubResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="Body/ForearmFront"]
 position = Vector2( -1.90735e-06, 6.5 )
@@ -144,24 +146,25 @@ texture = ExtResource( 2 )
 [node name="Hitbox" type="Area2D" parent="Body" groups=[
 "hitbox",
 ]]
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Hitbox"]
-visible = false
 position = Vector2( 1.55907, 3.78632 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Body"]
 position = Vector2( -1.48651, 23.6355 )
 remote_path = NodePath("../../Collider")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idle = SubResource( 3 )
-anims/walk = SubResource( 4 )
+anims/idle = SubResource( 2 )
+anims/walk = SubResource( 3 )
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( -1.48651, -1.3645 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
