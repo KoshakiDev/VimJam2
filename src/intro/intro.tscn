@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/intro/intro.gd" type="Script" id=1]
 [ext_resource path="res://assets/intro/gardner.png" type="Texture" id=2]
-[ext_resource path="res://assets/intro/ApercuPro-BoldItalic.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/misc/apercu.tres" type="DynamicFont" id=3]
 [ext_resource path="res://src/intro/GodotMan.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/intro/xanthosWare.png" type="Texture" id=5]
+[ext_resource path="res://assets/intro/adam_credit.png" type="Texture" id=6]
+[ext_resource path="res://src/main_menu/menu.tscn" type="PackedScene" id=7]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 resource_name = "progIntro"
 length = 2.0
 tracks/0/type = "value"
@@ -22,7 +24,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "soundIntro"
 length = 2.0
 tracks/0/type = "value"
@@ -37,9 +39,22 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "sceneMove"
+} ]
+}
 
-[sub_resource type="Animation" id=1]
-resource_name = "xanthosIntro"
+[sub_resource type="Animation" id=3]
 length = 3.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("ArtCredit/Title:visible")
@@ -90,20 +105,17 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=2]
-size = 48
-font_data = ExtResource( 3 )
-
 [node name="Intro" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_vertical_guides_": [ 0.1138 ]
 }
+transition_scene = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/progIntro = SubResource( 3 )
-anims/soundIntro = SubResource( 4 )
-anims/xanthosIntro = SubResource( 1 )
+anims/progIntro = SubResource( 1 )
+anims/soundIntro = SubResource( 2 )
+anims/xanthosIntro = SubResource( 3 )
 
 [node name="ArtCredit" type="Node2D" parent="."]
 modulate = Color( 1, 1, 1, 0 )
@@ -117,7 +129,7 @@ margin_left = 296.0
 margin_top = 392.0
 margin_right = 722.0
 margin_bottom = 504.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "Art
 Team Organization"
 align = 1
@@ -130,8 +142,7 @@ position = Vector2( 512, 208 )
 texture = ExtResource( 2 )
 
 [node name="Title" type="Sprite" parent="ArtCredit"]
-visible = false
-modulate = Color( 1, 1, 1, 0.333333 )
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 512, 440 )
 texture = ExtResource( 5 )
 
@@ -146,7 +157,7 @@ margin_left = 323.031
 margin_top = 390.28
 margin_right = 677.031
 margin_bottom = 543.28
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "Programmed by
 Master Mori
 Edeazul"
@@ -162,6 +173,11 @@ scale = Vector2( 5, 5 )
 [node name="SoundCredit" type="Node2D" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 
+[node name="Sprite" type="Sprite" parent="SoundCredit"]
+position = Vector2( 512, 220 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+
 [node name="Credit" type="Label" parent="SoundCredit"]
 anchor_top = 1.0
 anchor_right = 1.0
@@ -170,7 +186,7 @@ margin_left = 322.275
 margin_top = 390.468
 margin_right = 678.275
 margin_bottom = 543.468
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "Sound/Music by
 dragnmastr85"
 align = 1

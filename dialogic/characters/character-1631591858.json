@@ -1,0 +1,20 @@
+{
+	"color": "#ffac3232",
+	"description": "The \"player\" of the game",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1631591858.json",
+	"mirror_portraits": false,
+	"name": "Legendary Sheriff",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -200,
+	"offset_y": -100,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://assets/ui/dialogue/portraits/Sheriff/sheriff_portrait.png"
+		}
+	],
+	"scale": 50
+}

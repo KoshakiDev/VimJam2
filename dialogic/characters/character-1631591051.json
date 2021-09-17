@@ -1,0 +1,24 @@
+{
+	"color": "#ff5b6ee1",
+	"description": "A robot miner working in the mineshaft",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1631591051.json",
+	"mirror_portraits": false,
+	"name": "Godot",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 200,
+	"offset_y": -50,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://assets/ui/dialogue/portraits/Robot/player portrait frown.png"
+		},
+		{
+			"name": "Smile",
+			"path": "res://assets/ui/dialogue/portraits/Robot/player portrait smile.png"
+		}
+	],
+	"scale": 50
+}
