@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/cowboy_boss/cowboy_boss-sheet.png" type="Texture" id=1]
 [ext_resource path="res://assets/cowboy_boss/cowboy_boss-gun.png" type="Texture" id=2]
@@ -53,7 +53,16 @@ tracks/0/keys = {
 "values": [ 5, 6, 7, 8, 9 ]
 }
 
-[node name="Cowboy" type="Node2D"]
+[sub_resource type="CircleShape2D" id=3]
+radius = 200.0
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 6, 6 )
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 7.58339
+
+[node name="Cowboy" type="KinematicBody2D"]
 script = ExtResource( 3 )
 
 [node name="Shadow" type="Sprite" parent="."]
@@ -67,10 +76,12 @@ rotation = -0.000768945
 texture = ExtResource( 1 )
 hframes = 5
 vframes = 2
+frame = 5
 
 [node name="Gun" type="Node2D" parent="."]
 position = Vector2( 5, -4 )
-rotation = -0.00963554
+rotation = 0.00257599
+scale = Vector2( 1, 1 )
 
 [node name="GunSprite" type="Sprite" parent="Gun"]
 position = Vector2( 7, 0 )
@@ -79,3 +90,23 @@ texture = ExtResource( 2 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 1 )
 anims/walk = SubResource( 2 )
+
+[node name="VisionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea"]
+position = Vector2( 210, 0 )
+shape = SubResource( 3 )
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -2 )
+shape = SubResource( 4 )
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 0, -8 )
+shape = SubResource( 5 )
+
+[connection signal="body_entered" from="VisionArea" to="." method="_on_VisionArea_body_entered"]
