@@ -87,8 +87,10 @@ bullet_scene = ExtResource( 4 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control2" parent="CanvasLayer" instance=ExtResource( 1 )]
+mouse_filter = 2
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource( 3 )]
+mouse_filter = 2
 
 [node name="TransitionPlay" type="AnimationPlayer" parent="."]
 anims/transitionIn = SubResource( 1 )
