@@ -14,6 +14,7 @@ var is_player_bullet = false
 
 func _ready() -> void:
 	shooting = true
+	$ShootSound.play()
 
 func setup(dir, speed) -> void:
 	self.dir = dir
