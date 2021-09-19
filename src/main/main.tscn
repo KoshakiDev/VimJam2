@@ -51,8 +51,10 @@ margin_bottom = -300.0
 timeline = "timeline-1631632072.json"
 
 [node name="Control2" parent="CanvasLayer" instance=ExtResource( 1 )]
+mouse_filter = 2
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource( 3 )]
+mouse_filter = 2
 
 [node name="TransitionPlay" type="AnimationPlayer" parent="."]
 anims/transition = SubResource( 1 )

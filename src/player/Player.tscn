@@ -129,7 +129,7 @@ texture = ExtResource( 1 )
 position = Vector2( 0.141039, 21.953 )
 script = ExtResource( 6 )
 bullet_scene = ExtResource( 7 )
-bullet_emitter = null
+bullet_emitter = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Body/ForearmFront"]
 position = Vector2( -1.90735e-06, 6.5 )
