@@ -15,7 +15,7 @@ export var bullet_speed: float = 400
 var bullet_emitter: BulletEmitter
 
 # offset to the rotation, added to BulletSpawners rotation
-var rotation_offset: float = 0
+var rotation_offset: float = 0.0
 
 var can_shoot: bool = false
 

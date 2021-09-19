@@ -13,10 +13,10 @@ onready var front_arm := $Body/ForearmFront/FrontArm
 
 var freeze = false
 
-func _physics_process(delta):
-	if freeze:
-		return
+func _ready():
+	print(bullet_spawner.rotation_offset)
 
+func _physics_process(delta):
 	var move_dir := get_input_dir()
 	var look_dir := get_shoot_dir()
 	
@@ -37,6 +37,9 @@ func _physics_process(delta):
 		body.scale.x = -1
 	else:
 		body.scale.x = 1
+	
+	if freeze:
+		return
 	vel = move_and_slide(vel)
 
 
@@ -53,8 +56,11 @@ func shoot(dir: Vector2) -> void:
 	bullet_spawner.shoot(dir, bullet_speed)
 
 func _unhandled_input(event):
+	if freeze:
+		return
 	if event.is_action("player_shoot"):
 		bullet_spawner.set_shooting(event.is_pressed())
+		
 		
 func freeze():
 	freeze = true

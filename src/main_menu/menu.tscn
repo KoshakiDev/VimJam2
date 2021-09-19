@@ -35,7 +35,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "transition"
 length = 0.6
 tracks/0/type = "value"
@@ -101,4 +101,4 @@ stream = ExtResource( 4 )
 volume_db = -10.0
 
 [node name="TransitionPlay" type="AnimationPlayer" parent="."]
-anims/transition = SubResource( 3 )
+anims/transition = SubResource( 2 )

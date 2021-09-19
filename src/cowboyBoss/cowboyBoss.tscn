@@ -81,7 +81,6 @@ frame = 5
 [node name="Gun" type="Node2D" parent="."]
 position = Vector2( 5, -4 )
 rotation = 0.00257599
-scale = Vector2( 1, 1 )
 
 [node name="GunSprite" type="Sprite" parent="Gun"]
 position = Vector2( 7, 0 )
@@ -104,9 +103,12 @@ position = Vector2( 0, -2 )
 shape = SubResource( 4 )
 
 [node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 0, -8 )
 shape = SubResource( 5 )
 
 [connection signal="body_entered" from="VisionArea" to="." method="_on_VisionArea_body_entered"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]

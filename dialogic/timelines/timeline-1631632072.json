@@ -138,10 +138,6 @@
 			"event_id": "dialogic_001",
 			"portrait": "Smile",
 			"text": "I guess I will never know if I don't try"
-		},
-		{
-			"change_timeline": "timeline-1631681278.json",
-			"event_id": "dialogic_020"
 		}
 	],
 	"metadata": {
