@@ -13,7 +13,7 @@ onready var bullet_spawner = $Gun/BulletSpawner
 onready var wait_timer = $WaitTimer
 onready var shoot_ray = $Gun/RayCast2D
 
-var rotation_speed = 5
+var rotation_speed = 8
 
 var vel: Vector2 = Vector2.ZERO
 
@@ -22,6 +22,8 @@ var target
 var is_waiting = false
 
 var freeze = false
+
+var pseudo_rotation: float = 0
 
 func _ready():
 	anim_player.play("idle")
@@ -67,18 +69,19 @@ func rotateToTarget(target, delta):
 	bullet_spawner.rotation_offset = direction.angle()
 	var angle_to = gun.transform.x.angle_to(direction)
 #	gun.rotate(sign(angle_to) * min(delta * rotation_speed, abs(angle_to)))
-	if direction.angle() + PI/2 > PI or direction.angle() + PI/2 < 0:
-		rotate_gun(direction.angle() + PI, delta)
-	else:
-		rotate_gun(direction.angle(), delta)
-	if gun.rotation + PI/2 > PI or gun.rotation + PI/2 < 0:
+	rotate_gun(direction.angle(), delta)
+	if pseudo_rotation + PI/2 > PI or pseudo_rotation + PI/2 < 0:
 		gun.scale.x = -1
+		gun.rotation = pseudo_rotation + PI
 	else:
 		gun.scale.x = 1
-	print(gun.rotation)
+		gun.rotation = pseudo_rotation
+	print(pseudo_rotation)
 
 func rotate_gun(gun_rot: float, delta: float):
-	gun.rotation = lerp(gun.rotation, gun_rot, rotation_speed*delta)
+	if abs(gun_rot - pseudo_rotation) > 1.9*PI:
+		pseudo_rotation = gun_rot
+	pseudo_rotation = lerp(pseudo_rotation, gun_rot, rotation_speed*delta)
 
 func _on_Hitbox_area_entered(area):
 	Health.cowboy_health -= 1
