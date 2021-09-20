@@ -76,7 +76,7 @@ func rotateToTarget(target, delta):
 	else:
 		gun.scale.x = 1
 		gun.rotation = pseudo_rotation
-	print(pseudo_rotation)
+	#print(pseudo_rotation)
 
 func rotate_gun(gun_rot: float, delta: float):
 	if abs(gun_rot - pseudo_rotation) > 1.9*PI:

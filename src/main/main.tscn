@@ -88,7 +88,8 @@ bullet_scene = ExtResource( 4 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control2" parent="CanvasLayer" instance=ExtResource( 1 )]
-mouse_filter = 2
+margin_left = -1.7818
+margin_right = -1.7818
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource( 3 )]
 mouse_filter = 2
@@ -106,6 +107,4 @@ stream = ExtResource( 9 )
 [node name="CombatLoop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 
-[connection signal="freeze_player" from="." to="." method="freeze_player"]
-[connection signal="unfreeze_player" from="." to="." method="unfreeze_player"]
 [connection signal="finished" from="CombatIntro" to="." method="_on_CombatIntro_finished"]

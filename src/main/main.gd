@@ -11,14 +11,18 @@ onready var canvas_layer = $CanvasLayer
 onready var cowboy = $Cowboy
 onready var sheriff_appear_play = $SheriffAppear
 # Called when the node enters the scene tree for the first time.
-signal freeze_player
-signal unfreeze_player
+
+onready var player_ui = $CanvasLayer/Control
+onready var cowboy_ui = $CanvasLayer/Control2
+
 
 func _ready():
+	player_ui.visible = false
+	cowboy_ui.visible = false
 	freeze_player()
 	freeze_sheriff()
 	cowboy.visible = false
-	Health.cowboy_health = 100
+	Health.cowboy_health = 300
 	Health.player_health = 100
 	modulate.a = 0
 	transition_play.play("transitionIn")
@@ -34,6 +38,8 @@ func debug():
 	unfreeze_player()
 	unfreeze_sheriff()
 	$CombatIntro.play()
+	player_ui.visible = true
+	cowboy_ui.visible = true
 	
 
 func _physics_process(delta):
@@ -62,8 +68,13 @@ func sheriff_enter():
 	unfreeze_player()
 	unfreeze_sheriff()
 	$CombatIntro.play()
+	player_ui.visible = true
+	cowboy_ui.visible = true
 
 func win():
+	player_ui.visible = false
+	cowboy_ui.visible = false
+	$CombatLoop.stop()
 	freeze_sheriff()
 	var new_dialog = Dialogic.start('Outro')
 	add_child(new_dialog)
@@ -71,6 +82,9 @@ func win():
 	transition_play.play("transitionOut")
 
 func lose():
+	player_ui.visible = false
+	cowboy_ui.visible = false
+	$CombatLoop.stop()
 	freeze_sheriff()
 	var new_dialog = Dialogic.start('Lose')
 	add_child(new_dialog)
@@ -101,5 +115,4 @@ func unfreeze_sheriff():
 
 
 func _on_CombatIntro_finished():
-	print("music looped")
 	$CombatLoop.play()

@@ -39,6 +39,7 @@ func _physics_process(delta):
 		body.scale.x = 1
 	
 	if freeze:
+		bullet_spawner.set_shooting(false)
 		return
 	vel = move_and_slide(vel)
 
@@ -69,6 +70,6 @@ func unfreeze():
 	freeze = false
 
 func _on_Hitbox_area_entered(area):
-	Health.player_health -= 1
+	Health.player_health -= 5
 	$Hit.play()
 	Shake.shake(2.5, .5)

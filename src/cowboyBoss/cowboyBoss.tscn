@@ -12,7 +12,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 200.0
 
-[sub_resource type="Resource" id=7]
+[sub_resource type="Resource" id=2]
 script = ExtResource( 7 )
 spread = 10
 
@@ -94,7 +94,7 @@ texture = ExtResource( 2 )
 [node name="BulletSpawner" parent="Gun" instance=ExtResource( 6 )]
 position = Vector2( 16, -3 )
 bullet_scene = ExtResource( 8 )
-bullet_emitter = SubResource( 7 )
+bullet_emitter = SubResource( 2 )
 
 [node name="RayCast2D" type="RayCast2D" parent="Gun"]
 position = Vector2( 16, -3 )
