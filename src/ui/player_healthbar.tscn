@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://src/ui/PlayerHealthbar.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/healthbars/player/player_healthbar_over.png" type="Texture" id=2]
 [ext_resource path="res://assets/ui/healthbars/player/player_healthbar_under.png" type="Texture" id=4]
 [ext_resource path="res://assets/ui/healthbars/player/player_healthbar_progress.png" type="Texture" id=6]
@@ -18,6 +19,7 @@ value = 100.0
 texture_under = ExtResource( 4 )
 texture_over = ExtResource( 2 )
 texture_progress = ExtResource( 6 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -68,3 +68,7 @@ func freeze():
 func unfreeze():
 	freeze = false
 
+func _on_Hitbox_area_entered(area):
+	Health.player_health -= 1
+	$Hit.play()
+	Shake.shake(2.5, .5)

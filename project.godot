@@ -75,7 +75,7 @@ _global_script_class_icons={
 [application]
 
 config/name="VimJam2"
-run/main_scene="res://src/main/main.tscn"
+run/main_scene="res://src/intro/intro.tscn"
 boot_splash/image="res://splashscreen.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false

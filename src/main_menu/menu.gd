@@ -3,15 +3,15 @@ extends Node2D
 export (PackedScene) var transition_scene
 
 onready var anim_play = $AnimationPlayer
-onready var audio_play = $AudioPlay
+onready var intro_loop = $IntroLoop
 onready var transition_play = $TransitionPlay
 
 var switch = false
 
 func _ready():
+	intro_loop.play()
 	anim_play.play("idle")
-	audio_play.volume_db = 0
-	audio_play.play()
+	intro_loop.volume_db = 0
 	#modulate.a = 255
 
 func _input(event):

@@ -1,6 +1,15 @@
 {
 	"events": [
 		{
+			"audio_bus": "Master",
+			"background-music": "play",
+			"event_id": "dialogic_031",
+			"event_name": "BackgroundMusic",
+			"fade_length": 1,
+			"file": "res://assets/music/dialogue.wav",
+			"volume": 0
+		},
+		{
 			"action": "join",
 			"character": "character-1631591051.json",
 			"event_id": "dialogic_002",

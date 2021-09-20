@@ -1,107 +1,114 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/cowboy_boss/cowboy_boss-sheet.png" type="Texture" id=1]
 [ext_resource path="res://assets/cowboy_boss/cowboy_boss-gun.png" type="Texture" id=2]
 [ext_resource path="res://src/cowboyBoss/cowboyBoss.gd" type="Script" id=3]
 [ext_resource path="res://assets/cowboy_boss/cowboy_boss-shadow.png" type="Texture" id=4]
 [ext_resource path="res://assets/sounds/sheriff_hit.wav" type="AudioStream" id=5]
+[ext_resource path="res://src/components/BulletSpawner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/components/bullet_emitters/BulletEmitterSingle.gd" type="Script" id=7]
+[ext_resource path="res://src/components/bullet type/SheriffBullet.tscn" type="PackedScene" id=8]
 
-[sub_resource type="Animation" id=1]
-resource_name = "idle"
-length = 0.6
+[sub_resource type="CircleShape2D" id=1]
+radius = 200.0
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 7 )
+spread = 10
+
+[sub_resource type="Animation" id=3]
+length = 0.4
 loop = true
-step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Body/Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("Gun:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ -1.73708, 1.00617 ]
-}
 
-[sub_resource type="Animation" id=2]
-resource_name = "walk"
-length = 0.625
+[sub_resource type="Animation" id=4]
+length = 0.5
 loop = true
-step = 0.025
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Body/Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 5, 6, 7, 8, 9 ]
 }
 
-[sub_resource type="CircleShape2D" id=3]
-radius = 200.0
-
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 6, 6 )
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=6]
 radius = 7.58339
 
 [node name="Cowboy" type="KinematicBody2D"]
 script = ExtResource( 3 )
+bullet_scene = ExtResource( 8 )
 
 [node name="Shadow" type="Sprite" parent="."]
 position = Vector2( 0, 4 )
 scale = Vector2( 1, 0.5 )
 texture = ExtResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Body" type="Node2D" parent="."]
 position = Vector2( 0, -12 )
 rotation = -0.000768945
+
+[node name="Sprite" type="Sprite" parent="Body"]
 texture = ExtResource( 1 )
 hframes = 5
 vframes = 2
 frame = 5
 
-[node name="Gun" type="Node2D" parent="."]
-position = Vector2( 5, -4 )
-rotation = 0.00257599
-
-[node name="GunSprite" type="Sprite" parent="Gun"]
-position = Vector2( 7, 0 )
-texture = ExtResource( 2 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idle = SubResource( 1 )
-anims/walk = SubResource( 2 )
-
-[node name="VisionArea" type="Area2D" parent="."]
+[node name="VisionArea" type="Area2D" parent="Body"]
+position = Vector2( -0.00922734, 12 )
+rotation = 0.000768945
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/VisionArea"]
 position = Vector2( 210, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
+
+[node name="Gun" type="Node2D" parent="Body"]
+position = Vector2( 4.99385, 8.00384 )
+
+[node name="GunSprite" type="Sprite" parent="Body/Gun"]
+position = Vector2( 7, 0 )
+texture = ExtResource( 2 )
+
+[node name="BulletSpawner" parent="Body/Gun" instance=ExtResource( 6 )]
+position = Vector2( 16, -3 )
+bullet_scene = ExtResource( 8 )
+bullet_emitter = SubResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Body/Gun"]
+position = Vector2( 16, -3 )
+rotation = -1.5708
+scale = Vector2( 1, 8 )
+enabled = true
+collision_mask = 18
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idle = SubResource( 3 )
+anims/walk = SubResource( 4 )
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -2 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 8
@@ -109,10 +116,15 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 0, -8 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Hit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 
-[connection signal="body_entered" from="VisionArea" to="." method="_on_VisionArea_body_entered"]
+[node name="WaitTimer" type="Timer" parent="."]
+process_mode = 0
+
+[connection signal="body_entered" from="Body/VisionArea" to="." method="_on_VisionArea_body_entered"]
+[connection signal="body_exited" from="Body/VisionArea" to="." method="_on_VisionArea_body_exited"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
+[connection signal="timeout" from="WaitTimer" to="." method="_on_WaitTimer_timeout"]

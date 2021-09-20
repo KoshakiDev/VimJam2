@@ -15,14 +15,27 @@ signal freeze_player
 signal unfreeze_player
 
 func _ready():
+	freeze_player()
+	freeze_sheriff()
 	cowboy.visible = false
 	Health.cowboy_health = 100
 	Health.player_health = 100
 	modulate.a = 0
 	transition_play.play("transitionIn")
 	yield(transition_play, "animation_finished")
-	intro()
 	
+	intro()
+	#debug()
+
+func debug():
+	var new_dialog = Dialogic.start('Test Dialog')
+	add_child(new_dialog)
+	yield(new_dialog, "timeline_end")
+	unfreeze_player()
+	unfreeze_sheriff()
+	$CombatIntro.play()
+	
+
 func _physics_process(delta):
 	if Health.cowboy_health <= 0:
 		win()
@@ -47,17 +60,23 @@ func sheriff_enter():
 	add_child(new_dialog)
 	yield(new_dialog, "timeline_end")
 	unfreeze_player()
+	unfreeze_sheriff()
+	$CombatIntro.play()
 
 func win():
+	freeze_sheriff()
 	var new_dialog = Dialogic.start('Outro')
 	add_child(new_dialog)
 	yield(new_dialog, "timeline_end")
 	transition_play.play("transitionOut")
 
 func lose():
+	freeze_sheriff()
 	var new_dialog = Dialogic.start('Lose')
 	add_child(new_dialog)
+	freeze_player()
 	yield(new_dialog, "timeline_end")
+	unfreeze_player()
 	transition_play.play("transitionOut")
 
 func back_to_menu():
@@ -70,7 +89,17 @@ func freeze_player():
 func unfreeze_player():
 	player.unfreeze()
 
+func freeze_sheriff():
+	cowboy.freeze()
+
+func unfreeze_sheriff():
+	cowboy.unfreeze()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_CombatIntro_finished():
+	print("music looped")
+	$CombatLoop.play()

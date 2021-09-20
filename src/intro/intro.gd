@@ -8,6 +8,7 @@ onready var prog_credit = $ProgCredit
 onready var sound_credit = $SoundCredit
 
 func _ready():
+	$Intro.play()
 	art_credit.modulate.a = 0
 	prog_credit.modulate.a = 0
 	sound_credit.modulate.a = 0
@@ -24,3 +25,7 @@ func _input(event):
 
 func sceneMove():
 	get_tree().change_scene("res://src/main_menu/menu.tscn")
+
+
+func _on_Intro_finished():
+	sceneMove()

@@ -79,7 +79,9 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 6.95486, 8.41533 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource( 5 )
@@ -150,7 +152,6 @@ collision_layer = 16
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Hitbox"]
-visible = false
 position = Vector2( 1.55907, 3.78632 )
 shape = SubResource( 2 )
 
@@ -174,3 +175,5 @@ zoom = Vector2( 0.5, 0.5 )
 
 [node name="Hit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+
+[connection signal="area_entered" from="Body/Hitbox" to="." method="_on_Hitbox_area_entered"]
