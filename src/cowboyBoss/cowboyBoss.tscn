@@ -12,7 +12,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 200.0
 
-[sub_resource type="Resource" id=2]
+[sub_resource type="Resource" id=7]
 script = ExtResource( 7 )
 spread = 10
 
@@ -83,19 +83,20 @@ collision_mask = 2
 position = Vector2( 210, 0 )
 shape = SubResource( 1 )
 
-[node name="Gun" type="Node2D" parent="Body"]
-position = Vector2( 4.99385, 8.00384 )
+[node name="Gun" type="Node2D" parent="."]
+position = Vector2( 5, -4 )
+rotation = -0.000768945
 
-[node name="GunSprite" type="Sprite" parent="Body/Gun"]
+[node name="GunSprite" type="Sprite" parent="Gun"]
 position = Vector2( 7, 0 )
 texture = ExtResource( 2 )
 
-[node name="BulletSpawner" parent="Body/Gun" instance=ExtResource( 6 )]
+[node name="BulletSpawner" parent="Gun" instance=ExtResource( 6 )]
 position = Vector2( 16, -3 )
 bullet_scene = ExtResource( 8 )
-bullet_emitter = SubResource( 2 )
+bullet_emitter = SubResource( 7 )
 
-[node name="RayCast2D" type="RayCast2D" parent="Body/Gun"]
+[node name="RayCast2D" type="RayCast2D" parent="Gun"]
 position = Vector2( 16, -3 )
 rotation = -1.5708
 scale = Vector2( 1, 8 )

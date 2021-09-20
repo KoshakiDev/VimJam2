@@ -5,7 +5,7 @@
 [ext_resource path="res://src/ui/player_healthbar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/components/bullet type/PlayerBullet.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/music/combat_loop.wav" type="AudioStream" id=5]
-[ext_resource path="res://src/player/player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/environment/tileset/caveTileset.tres" type="TileSet" id=7]
 [ext_resource path="res://src/main/main.gd" type="Script" id=8]
 [ext_resource path="res://assets/music/combat_intro.wav" type="AudioStream" id=9]
