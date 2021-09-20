@@ -166,7 +166,9 @@ anims/walk = SubResource( 4 )
 position = Vector2( -1.48651, -1.3645 )
 shape = SubResource( 5 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." groups=[
+"camera",
+]]
 current = true
 zoom = Vector2( 0.5, 0.5 )
 

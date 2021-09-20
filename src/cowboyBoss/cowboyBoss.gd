@@ -22,3 +22,4 @@ func _on_VisionArea_body_entered(body, delta):
 func _on_Hitbox_area_entered(area):
 	Health.cowboy_health -= 1
 	$Hit.play()
+	Shake.shake(2.5, .5)

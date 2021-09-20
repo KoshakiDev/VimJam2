@@ -86,6 +86,7 @@ config/icon="res://icon.png"
 
 DialogicSingleton="*res://addons/dialogic/Other/DialogicSingleton.gd"
 Health="*res://src/global/healths.gd"
+Shake="*res://src/components/Shake.gd"
 
 [display]
 
