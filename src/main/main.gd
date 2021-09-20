@@ -21,7 +21,6 @@ func _ready():
 	cowboy_ui.visible = false
 	freeze_player()
 	freeze_sheriff()
-	cowboy.visible = false
 	Health.cowboy_health = 300
 	Health.player_health = 100
 	modulate.a = 0
@@ -29,7 +28,7 @@ func _ready():
 	yield(transition_play, "animation_finished")
 	
 	intro()
-	#debug()
+#	debug()
 
 func debug():
 	var new_dialog = Dialogic.start('Test Dialog')
@@ -51,6 +50,7 @@ func _physics_process(delta):
 		set_physics_process(false)
 
 func intro():
+	cowboy.visible = false
 	var new_dialog = Dialogic.start('Intro')
 	add_child(new_dialog)
 	freeze_player()
