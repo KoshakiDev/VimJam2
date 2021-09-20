@@ -31,6 +31,7 @@ func _ready():
 #	debug()
 
 func debug():
+	cowboy.visible = true
 	var new_dialog = Dialogic.start('Test Dialog')
 	add_child(new_dialog)
 	yield(new_dialog, "timeline_end")
