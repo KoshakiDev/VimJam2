@@ -14,6 +14,7 @@ onready var front_arm := $Body/ForearmFront/FrontArm
 var freeze = false
 
 func _ready():
+	Shake.set_camera($Camera2D)
 	print(bullet_spawner.rotation_offset)
 
 func _physics_process(delta):
@@ -71,4 +72,4 @@ func unfreeze():
 func _on_Hitbox_area_entered(area):
 	Health.player_health -= 1
 	$Hit.play()
-	Shake.shake(2.5, .5)
+	Shake.shake(4.0, .5)
