@@ -2,12 +2,13 @@
 
 [ext_resource path="res://assets/cowboy_boss/cowboy_boss-sheet.png" type="Texture" id=1]
 [ext_resource path="res://assets/cowboy_boss/cowboy_boss-gun.png" type="Texture" id=2]
-[ext_resource path="res://src/cowboyBoss/cowboyBoss.gd" type="Script" id=3]
+[ext_resource path="res://src/cowboyBoss/cowboy_boss.gd" type="Script" id=3]
 [ext_resource path="res://assets/cowboy_boss/cowboy_boss-shadow.png" type="Texture" id=4]
 [ext_resource path="res://assets/sounds/sheriff_hit.wav" type="AudioStream" id=5]
 [ext_resource path="res://src/components/BulletSpawner.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/components/bullet_emitters/BulletEmitterSingle.gd" type="Script" id=7]
 [ext_resource path="res://src/components/bullet type/SheriffBullet.tscn" type="PackedScene" id=8]
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 200.0

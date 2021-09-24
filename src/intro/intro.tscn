@@ -3,8 +3,8 @@
 [ext_resource path="res://src/intro/intro.gd" type="Script" id=1]
 [ext_resource path="res://assets/intro/gardner.png" type="Texture" id=2]
 [ext_resource path="res://assets/misc/apercu.tres" type="DynamicFont" id=3]
-[ext_resource path="res://src/intro/GodotMan.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/intro/xanthosWare.png" type="Texture" id=5]
+[ext_resource path="res://src/intro/godot_man.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/intro/xanthos_ware.png" type="Texture" id=5]
 [ext_resource path="res://assets/intro/adam_credit.png" type="Texture" id=6]
 [ext_resource path="res://src/main_menu/menu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/music/title_intro.wav" type="AudioStream" id=8]
@@ -104,6 +104,29 @@ anims/progIntro = SubResource( 1 )
 anims/soundIntro = SubResource( 2 )
 anims/xanthosIntro = SubResource( 3 )
 
+[node name="ProgCredit" type="Node2D" parent="."]
+
+[node name="Credit" type="Label" parent="ProgCredit"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 323.031
+margin_top = 390.28
+margin_right = 677.031
+margin_bottom = 543.28
+custom_fonts/font = ExtResource( 3 )
+text = "Programmed by
+Master Mori
+Edeazul"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GodotMan" parent="ProgCredit" instance=ExtResource( 4 )]
+position = Vector2( 512, 325 )
+scale = Vector2( 5, 5 )
+
 [node name="ArtCredit" type="Node2D" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 
@@ -133,30 +156,6 @@ visible = false
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 512, 440 )
 texture = ExtResource( 5 )
-
-[node name="ProgCredit" type="Node2D" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-
-[node name="Credit" type="Label" parent="ProgCredit"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 323.031
-margin_top = 390.28
-margin_right = 677.031
-margin_bottom = 543.28
-custom_fonts/font = ExtResource( 3 )
-text = "Programmed by
-Master Mori
-Edeazul"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GodotMan" parent="ProgCredit" instance=ExtResource( 4 )]
-position = Vector2( 512, 325 )
-scale = Vector2( 5, 5 )
 
 [node name="SoundCredit" type="Node2D" parent="."]
 modulate = Color( 1, 1, 1, 0 )

@@ -90,6 +90,8 @@ Shake="*res://src/components/Shake.gd"
 
 [display]
 
+window/size/test_width=1024
+window/size/test_height=600
 mouse_cursor/custom_image="res://assets/misc/crosshair.png"
 mouse_cursor/custom_image_hotspot=Vector2( 48, 48 )
 window/stretch/mode="2d"

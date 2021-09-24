@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Node2D
 
 #THIS NPC SERVES NO OTHER PURPOSE BUT TO APPEAR IN THE INTRO
 

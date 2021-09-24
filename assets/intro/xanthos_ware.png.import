@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/xanthosWare.png-cf2677555dcc98b252f2b7466303cdd6.stex"
+path="res://.import/xanthos_ware.png-e72e30e9a5e4fd2d5fa8a2c2ccd9f253.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/intro/xanthosWare.png"
-dest_files=[ "res://.import/xanthosWare.png-cf2677555dcc98b252f2b7466303cdd6.stex" ]
+source_file="res://assets/intro/xanthos_ware.png"
+dest_files=[ "res://.import/xanthos_ware.png-e72e30e9a5e4fd2d5fa8a2c2ccd9f253.stex" ]
 
 [params]
 
